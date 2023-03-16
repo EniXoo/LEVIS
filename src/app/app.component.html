@@ -1,0 +1,202 @@
+<div class="grid grid-cols-3 mt-3">
+  <div class="flex justify-around items-center ml-20">
+    <div class="font-bold cursor-pointer hover:text-red-600">
+      ACHETER
+    </div>
+    <div class="font-bold cursor-pointer hover:text-red-600">
+      DÉCOUVREZ
+    </div>
+    <div class="font-bold cursor-pointer hover:text-red-600">
+      501® 150TH
+    </div>
+    <div class="text-red-600 font-bold cursor-pointer hover:text-black dropdown">
+      LEVI'S® LEGACY
+      <div class="dropdown-content">
+        <p class="m-3 text-red-600 hover:text-black" (click)="setCurrentPage('SHORT')">PASS SHORT 501®</p>
+        <p class="m-3 text-red-600 hover:text-black" (click)="setCurrentPage('JEANS')">PASS JEANS 501®</p>
+        <p class="m-3 text-red-600 hover:text-black" (click)="setCurrentPage('FULL')">PASS FULL 501®</p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-center">
+    <img src="assets/images/logoLevis.png" alt="logo-levis" class="w-32 cursor-pointer" (click)="setCurrentPage('HOME')"/>
+  </div>
+  <div>
+    <i ></i>
+  </div>
+</div>
+
+<div *ngIf="currentPage === 'HOME'">
+  <p class="text-center font-extrabold text-4xl tracking-widest">LA PLUS GRANDE HISTOIRE JAMAIS PORTÉE</p>
+  <p class="text-center py-6 tracking-wide">Célébrons le 150e Anniversaire du jean Levi’s® 501®.</p>
+  <img src="assets/images/background.avif" alt="logo-levis"/>
+</div>
+
+<div class="mt-16 mx-64 h-full grid grid-cols-1" *ngIf="currentPage === 'JEANS'">
+  <div>
+    <p class="text-red-600 font-bold">PASS JEANS 501®</p>
+    <div class="grid grid-cols-2">
+      <div class="flex gap-x-6">
+        <div>
+          <img src="assets/images/affiche.png" alt="affiche" class="w-64">
+        </div>
+        <div>
+          <img src="assets/images/logoDocks.png" alt="logo-docks" class="w-32"/>
+          <p class="font-bold">LEVI'S® LEGACY</p>
+          <p class="text-zinc-600">Pass Journée - LEVI'S® LEGACY</p>
+          <p>Le 16 Septembre et 17 Septembre</p>
+          <p>À PARTIR DE 11€</p>
+        </div>
+      </div>
+      <div class="flex items-center justify-center">
+        <div>
+          <p><span class="font-bold pb-4 text-red-600">RÉSERVATIONS </span>- Samedi</p>
+          <div class="grid grid-cols-2 pb-6">
+            <p class="ml-4">TARIF ENFANT <span class="font-bold text-red-600">11€</span></p>
+            <p><span class="cursor-pointer ml-6" (click)="decrementTicketsEnfant()">-</span><span class="mx-3">{{ticketsEnfant}}</span><span class="cursor-pointer" (click)="incrementTicketsEnfant()">+</span></p>
+            <p class="ml-4">TARIF ÉTUDIANT (-26ans) <span class="font-bold text-red-600">15€</span></p>
+            <p><span class="cursor-pointer ml-6" (click)="decrementTicketsEtudiant()">-</span><span class="mx-3">{{ticketsEtudiant}}</span><span class="cursor-pointer" (click)="incrementTicketsEtudiant()">+</span></p>
+            <p class="ml-4">PLEIN TARIF <span class="font-bold text-red-600 mr">20€</span></p>
+            <p><span class="cursor-pointer ml-6" (click)="decrementTicketsPlein()">-</span><span class="mx-3">{{ticketsPlein}}</span><span class="cursor-pointer" (click)="incrementTicketsPlein()">+</span></p>
+          </div>
+          <p><span class="font-bold pb-4 text-red-600">RÉSERVATIONS </span>- Dimanche</p>
+          <div class="grid grid-cols-2">
+            <p class="ml-4">TARIF ENFANT <span class="font-bold text-red-600">11€</span></p>
+            <p><span class="cursor-pointer ml-6" (click)="decrementTicketsEnfantD()">-</span><span class="mx-3">{{ticketsEnfantD}}</span><span class="cursor-pointer" (click)="incrementTicketsEnfantD()">+</span></p>
+            <p class="ml-4">TARIF ÉTUDIANT (-26ans) <span class="font-bold text-red-600">15€</span></p>
+            <p><span class="cursor-pointer ml-6" (click)="decrementTicketsEtudiantD()">-</span><span class="mx-3">{{ticketsEtudiantD}}</span><span class="cursor-pointer" (click)="incrementTicketsEtudiantD()">+</span></p>
+            <p class="ml-4">PLEIN TARIF <span class="font-bold text-red-600 mr">20€</span></p>
+            <p><span class="cursor-pointer ml-6" (click)="decrementTicketsPleinD()">-</span><span class="mx-3">{{ticketsPleinD}}</span><span class="cursor-pointer" (click)="incrementTicketsPleinD()">+</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pt-5">
+    <p class="font-bold">LEVI’S LEGACY</p>
+    <p>Pour les 150 ans de son fameux 501, la marque LEVI’S vous propose de marquer votre histoire.</p>
+    <p>L’objectif de cet événement est de célébrer, fédérer et fêter l’anniversaire de ce jean mythique et authentique de la marque. Placé sous le signe de la célébration, de la surprise et de l'émerveillement. L'événement aura lieu dans le Grand Foyer de la Cité de la Mode et du Design (Paris 13).</p>
+    <p class="font-bold pt-5">Infos pratiques</p>
+    <p>Accès : Quai de Seine, 75013, Paris.</p>
+    <p>Accès PMR : </p>
+    <p><span class="font-bold">Élévateur</span> - 36 quai d’Austerlitz, 75013, Paris (côté IFM)</p>
+    <p><span class="font-bold">Rampe d'accès</span> - 32 quai d’Austerlitz, 75013 Paris</p>
+    <p>Billet permettant l’accès à la journée de votre choix.</p>
+    <p class="pt-5"><span class="font-bold">La réservation est recommandée.</span> Compte tenu de l'affluence, seule la réservation en ligne <span class="font-bold">garantit</span> l'entrée à l’événement.</p>
+    <p><span class="font-bold">Evacuation des salles :</span> 30 min avant la fermeture.</p>
+    <p>Dernière entrée préconisée à 18h. (heure GMT+1)</p>
+    <p>Toute sortie de l'établissement est définitive.</p>
+    <p>Billet valable uniquement à la date et au créneau sélectionnés.</p>
+    <p>En vous connectant à votre compte, vous pouvez modifier votre billet jusqu'à minuit heure française la veille de la visite (sous réserve de la disponibilité du créneau souhaité).</p>
+  </div>
+  <div class="flex justify-center py-20">
+    <img src="assets/images/metro1.png" alt="metro1" class="w-2/5">
+    <img src="assets/images/metro2.png" alt="metro2" class="w-2/5">
+  </div>
+</div>
+
+<div class="mt-16 mx-64 h-full grid grid-cols-1" *ngIf="currentPage === 'SHORT'">
+  <div>
+    <p class="text-red-600 font-bold">PASS SHORT 501®</p>
+    <div class="grid grid-cols-2">
+      <div class="flex gap-x-6">
+        <div>
+          <img src="assets/images/affiche.png" alt="affiche" class="w-64">
+        </div>
+        <div>
+          <img src="assets/images/logoDocks.png" alt="logo-docks" class="w-32"/>
+          <p class="font-bold">LEVI'S® LEGACY</p>
+          <p class="text-zinc-600">Pass Soirée - LEVI'S® LEGACY</p>
+          <p>18 ans et +</p>
+          <p>Le 16 Septembre</p>
+          <p>À PARTIR DE 25€</p>
+        </div>
+      </div>
+      <div class="flex items-center justify-center">
+        <div>
+          <p class="font-bold pb-4 text-red-600">RÉSERVATIONS</p>
+          <div class="grid grid-cols-2">
+            <p class="ml-4">TARIF ÉTUDIANT (-26ans) <span class="font-bold text-red-600">25€</span></p>
+            <p><span class="cursor-pointer ml-6" (click)="decrementTicketsEtudiant()">-</span><span class="mx-3">{{ticketsEtudiant}}</span><span class="cursor-pointer" (click)="incrementTicketsEtudiant()">+</span></p>
+            <p class="ml-4">PLEIN TARIF <span class="font-bold text-red-600 mr">30€</span></p>
+            <p><span class="cursor-pointer ml-6" (click)="decrementTicketsPlein()">-</span><span class="mx-3">{{ticketsPlein}}</span><span class="cursor-pointer" (click)="incrementTicketsPlein()">+</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pt-5">
+    <p class="font-bold">LEVI’S LEGACY</p>
+    <p>Pour les 150 ans de son fameux 501, la marque LEVI’S vous propose de marquer votre histoire.</p>
+    <p>L’objectif de cet événement est de célébrer, fédérer et fêter l’anniversaire de ce jean mythique et authentique de la marque. Placé sous le signe de la célébration, de la surprise et de l'émerveillement. L'événement aura lieu dans le Grand Foyer de la Cité de la Mode et du Design (Paris 13).</p>
+    <p class="font-bold pt-5">Infos pratiques</p>
+    <p>Accès : Quai de Seine, 75013, Paris.</p>
+    <p>Accès PMR : </p>
+    <p><span class="font-bold">Élévateur</span> - 36 quai d’Austerlitz, 75013, Paris (côté IFM)</p>
+    <p><span class="font-bold">Rampe d'accès</span> - 32 quai d’Austerlitz, 75013 Paris</p>
+    <p>Billet permettant l’accès à la journée de votre choix.</p>
+    <p class="pt-5"><span class="font-bold">La réservation est recommandée.</span> Compte tenu de l'affluence, seule la réservation en ligne <span class="font-bold">garantit</span> l'entrée à l’événement.</p>
+    <p><span class="font-bold">Evacuation des salles :</span> 30 min avant la fermeture.</p>
+    <p>Toute sortie de l'établissement est définitive.</p>
+    <p>Billet valable uniquement à la date et au créneau sélectionnés.</p>
+    <p>En vous connectant à votre compte, vous pouvez modifier votre billet jusqu'à minuit heure française la veille de la visite (sous réserve de la disponibilité du créneau souhaité).</p>
+  </div>
+  <div class="flex justify-center py-20">
+    <img src="assets/images/metro1.png" alt="metro1" class="w-2/5">
+    <img src="assets/images/metro2.png" alt="metro2" class="w-2/5">
+  </div>
+</div>
+
+<div class="mt-16 mx-64 h-full grid grid-cols-1" *ngIf="currentPage === 'FULL'">
+  <div>
+    <p class="text-red-600 font-bold">PASS FULL 501®</p>
+    <div class="grid grid-cols-2">
+      <div class="flex gap-x-6">
+        <div>
+          <img src="assets/images/affiche.png" alt="affiche" class="w-64">
+        </div>
+        <div>
+          <img src="assets/images/logoDocks.png" alt="logo-docks" class="w-32"/>
+          <p class="font-bold">LEVI'S® LEGACY</p>
+          <p class="text-zinc-600">Pass Journée + Soirée - LEVI'S® LEGACY</p>
+          <p>18 ans et +</p>
+          <p>Le 16 Septembre</p>
+          <p>À PARTIR DE 35€</p>
+        </div>
+      </div>
+      <div class="flex items-center justify-center">
+        <div>
+          <p class="font-bold pb-4 text-red-600">RÉSERVATIONS</p>
+          <div class="grid grid-cols-2">
+            <p class="ml-4">TARIF ÉTUDIANT (-26ans) <span class="font-bold text-red-600">35€</span></p>
+            <p><span class="cursor-pointer ml-6" (click)="decrementTicketsEtudiant()">-</span><span class="mx-3">{{ticketsEtudiant}}</span><span class="cursor-pointer" (click)="incrementTicketsEtudiant()">+</span></p>
+            <p class="ml-4">PLEIN TARIF <span class="font-bold text-red-600 mr">40€</span></p>
+            <p><span class="cursor-pointer ml-6" (click)="decrementTicketsPlein()">-</span><span class="mx-3">{{ticketsPlein}}</span><span class="cursor-pointer" (click)="incrementTicketsPlein()">+</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pt-5">
+    <p class="font-bold">LEVI’S LEGACY</p>
+    <p>Pour les 150 ans de son fameux 501, la marque LEVI’S vous propose de marquer votre histoire.</p>
+    <p>L’objectif de cet événement est de célébrer, fédérer et fêter l’anniversaire de ce jean mythique et authentique de la marque. Placé sous le signe de la célébration, de la surprise et de l'émerveillement. L'événement aura lieu dans le Grand Foyer de la Cité de la Mode et du Design (Paris 13).</p>
+    <p class="font-bold pt-5">Infos pratiques</p>
+    <p>Accès : Quai de Seine, 75013, Paris.</p>
+    <p>Accès PMR : </p>
+    <p><span class="font-bold">Élévateur</span> - 36 quai d’Austerlitz, 75013, Paris (côté IFM)</p>
+    <p><span class="font-bold">Rampe d'accès</span> - 32 quai d’Austerlitz, 75013 Paris</p>
+    <p>Billet permettant l’accès à la journée de votre choix.</p>
+    <p class="pt-5"><span class="font-bold">La réservation est recommandée.</span> Compte tenu de l'affluence, seule la réservation en ligne <span class="font-bold">garantit</span> l'entrée à l’événement.</p>
+    <p><span class="font-bold">Evacuation des salles :</span> 30 min avant la fermeture.</p>
+    <p>Dernière entrée préconisée à 18h. (heure GMT+1)</p>
+    <p>Toute sortie de l'établissement est définitive.</p>
+    <p>Billet valable uniquement à la date et au créneau sélectionnés.</p>
+    <p>En vous connectant à votre compte, vous pouvez modifier votre billet jusqu'à minuit heure française la veille de la visite (sous réserve de la disponibilité du créneau souhaité).</p>
+  </div>
+  <div class="flex justify-center py-20">
+    <img src="assets/images/metro1.png" alt="metro1" class="w-2/5">
+    <img src="assets/images/metro2.png" alt="metro2" class="w-2/5">
+  </div>
+</div>
+
